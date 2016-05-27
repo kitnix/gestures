@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+   
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+     <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700'
+      rel='stylesheet' type='text/css'>
+    <title> Character </title>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="character-container">
+        <div class="character">
+        </div>
+      </div>
+      <div class="clear"></div>
+      <h1> Instructions </h1>
+      <p> Walk Right &gt; Swipe Right <br>
+        Walk Left &gt; Swipe Left <br>
+        Jump &gt; Tap <br>
+        Stand &gt; Long Tap </p>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+    $(document).bind('mobileinit',function(){
+            $.mobile.changePage.defaults.changeHash = false;
+            $.mobile.hashListeningEnabled = false;
+            $.mobile.pushStateEnabled = false;
+        });
+    </script>
+    
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <script>  
+
+
+
+
+//taphold
+   $(function(){
+      $( "div.character" ).bind( "taphold", tapholdHandler );
+  
+      function tapholdHandler( event ){
+        $( event.target ).removeClass("swipe-right swipe-left jump")
+        $( event.target ).addClass( "taphold" );
+      }
+    });
+//taphold
+
+    // $(document).on("scroll",function(){
+    // alert("Scrolling detected!");
+    // });
+
+
+
+      $(function(){
+      $("div.character").bind("tap", tapHandler);
+
+      function tapHandler( event ){
+        $(event.target).removeClass("swipe-left swipe-right taphold")
+        $(event.target).addClass("tap");
+      }
+      });
+
+    $(function(){
+      // Bind the swipeleftHandler callback function to the swipe event on div.box
+      $( "div.character" ).bind( "swipeleft", swipeleftHandler );
+
+      // Callback function references the event target and adds the 'swipeleft' class to it
+      function swipeleftHandler( event ){
+        $( event.target ).removeClass("swipe-right jump taphold");
+        $( event.target ).addClass( "swipe-left" );
+      }
+    });
+
+    $(function(){
+        // Bind the swiperightHandler callback function to the swipe event on div.box
+      $( "div.character" ).bind( "swiperight", swiperightHandler );
+
+      // Callback function references the event target and adds the 'swiperight' class to it
+      function swiperightHandler( event ){
+        $( event.target ).removeClass( "swipe-left jump taphold" );
+        $( event.target ).addClass( "swipe-right" );
+      }
+    });
+
+ 
+
+
+    </script>
+  </body>
+</html>

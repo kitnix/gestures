@@ -1,0 +1,15 @@
+Title: 
+	Mobile Gestures Squid
+
+Summary: 
+	An adorable class project to investigate the nature of mobile gestures. 
+
+Tools:  Atom
+	Chrome dev tools
+
+Languages: HTML
+	   CSS
+	   Javascript
+
+Reflection:
+	This test site uses a cute squid to show mobile gestures using the jquery library. After turning in the project which consisted of tap, swipe left, and swipe right features, I worked on adding a fourth on my own. I wanted the squid to be able return to his original starting position. The key was figuring out the best gesture. I'm currently using the tap hold function which works well on mobile but has some difficulties on a desktop as the click-and-drag seems to be registered as a tap hold. With more time I would experiment with other gestures, possibly see if a scroll would work, and make it more mobile responsive which ironically wasn't part of the project requirements. 
